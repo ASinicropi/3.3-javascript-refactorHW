@@ -31,7 +31,7 @@ function doSomethingCool() {
 
 var doSomethingCool = function()
 {
-  console.log("Something Cool!")
+  console.log("Something Cool!");
 }
 
 doSomethingCool();
@@ -46,15 +46,19 @@ doSomethingCool();
 // after 2 seconds. Refactor to use an anonymous
 // function
 
-function sayHi() {
-  alert("Hello, World!");
-}
+//function sayHi() {
+  //alert("Hello, World!");
+//}
 
-setTimeout(sayHi, 2000);
+//setTimeout(sayHi, 2000);
 
 // Put your answer below -------------------------
 
+//var sayHi = function(){
+//  alert("Hello, World!");
+//}
 
+//setTimeout(sayHi, 2000);
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -83,6 +87,9 @@ letter = "z";
 console.log("The letter is", letter);
 
 // Put your answer below -------------------------
+//[c]: z then y. Because z and y both have console.log they
+//will both show up but since lettey y has a number 1 init it
+//will be logged second.
 
 
 // -----------------------------------------------
@@ -106,6 +113,13 @@ var reverseStr = function(str) {
 
 // Put your answer below -------------------------
 
+var reverseStr = function(arr){
+  var str;
+  str = arr.split("");
+  str = str.reverse();
+  arr = str.join("");
+  return arr;
+}
 
 // -----------------------------------------------
 
@@ -128,7 +142,7 @@ var spanishColor = function(colorName) {
     return "#ffffff";
   }
   else if (colorName.toLowerCase() === "azul") {
-    return "#0000ff";
+    return "#0000FF";
   }
   else if (colorName.toLowerCase() === "verde") {
     return "#00ff00";
@@ -140,7 +154,17 @@ var spanishColor = function(colorName) {
 
 // Put your answer below -------------------------
 
-
+var spanishColor = function(colorName){
+    var spanishColorTable = {
+      "negro":"#000",
+      "verde":"#00ff00",
+      "azul":"#0000FF",
+      "blanco":"#FFF",
+      "rojo":"#ff0000"
+    }
+    return spanishColorTable[colorName];
+}
+console.log(spanishColor("rojo"));
 // -----------------------------------------------
 
 //////////////////////////////////////////////////
@@ -155,8 +179,12 @@ var spanishColor = function(colorName) {
 
 var foo = "bar";
 
+
 // Put your answer below -------------------------
 
+var foo;
+foo = "bar";
+console.log(foo);
 
 // -----------------------------------------------
 
@@ -173,12 +201,20 @@ var foo = "bar";
 // function.
 
 var callTenTimes = function(callback) {
-  var range = _.range(10);
-  _.each(range, callback);
+  for(var i = 0; i < 10; i++){
+    callback();
+  }
 };
 
 // Put your answer below -------------------------
 
+var number = 20;
+var callNtimes = function(callback){
+  var x = number;
+  for(var i = 0; i < x; i++){
+    callback();
+  }
+};
 
 // -----------------------------------------------
 
@@ -207,6 +243,23 @@ var decreaseScore = function() {
 
 // Put your answer below -------------------------
 
+(function(){
+    var score = 1;
+
+    function increasedScore(){
+        score++;
+        console.log(score);
+    }
+
+    function decreasedScore(){
+        score--;
+    }
+
+    function run(){
+        increasedScore();
+    }
+    run();
+  }());
 
 // -----------------------------------------------
 
@@ -227,6 +280,10 @@ var twoPlusTwo = addNumbers(2,2);
 
 // Put your answer below -------------------------
 
+var addNumbers = function(numberA, numberB){
+    return(numberA + numberB);
+}
+var twoPlusTwo = addNumbers(2,2);
 
 // -----------------------------------------------
 
@@ -253,6 +310,18 @@ var accelerate = function(amount) {
 
 // Put your answer below -------------------------
 
+//The amount variable is undefined so when it is added to a defined
+//variable you get NaN.
+var speed = 0;
+
+var accelerate = function(amount){
+  if(amount){
+    speed += amount;
+  }
+  else{
+    amount = 1;
+  }
+}
 
 // -----------------------------------------------
 
